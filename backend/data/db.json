@@ -1,0 +1,429 @@
+{
+  "users": [
+    {
+      "_id": "admin_sys_master_000",
+      "name": "System Administrator",
+      "email": "admin",
+      "password": "$2a$10$GiE1xEObQNhT7Ad690biUuJJl5NfWFqP8mte1qUsoDmP1bd8klyZC",
+      "currency": "₹",
+      "role": "admin",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "admin_sys_master_001",
+      "name": "System Administrator",
+      "email": "admin@expensetrack.app",
+      "password": "$2a$10$GiE1xEObQNhT7Ad690biUuJJl5NfWFqP8mte1qUsoDmP1bd8klyZC",
+      "currency": "₹",
+      "role": "admin",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "admin_sys_master_002",
+      "name": "Admin Console",
+      "email": "admin@expensetracker.com",
+      "password": "$2a$10$GiE1xEObQNhT7Ad690biUuJJl5NfWFqP8mte1qUsoDmP1bd8klyZC",
+      "currency": "₹",
+      "role": "admin",
+      "createdAt": "2026-01-01T00:00:00.000Z"
+    },
+    {
+      "_id": "demo_user_id_101",
+      "name": "Aditya Sharma (MCA)",
+      "email": "demo@expensetracker.com",
+      "password": "$2a$10$Md6oWnaAlgnf9YiM9i67wedDMwS0tTne43L5D2hvnP4Svzz706/Ou",
+      "currency": "₹",
+      "role": "user",
+      "createdAt": "2025-12-31T18:30:00.000Z"
+    },
+    {
+      "_id": "mvw0l4nrvsk30",
+      "name": "Rohan Verma",
+      "email": "student_1793427765870@test.com",
+      "password": "$2a$10$xDOXIsLSnE4CPDPLU9cVWet.rP1MvzO7582BiDpEax/ApE36pmpTy",
+      "currency": "₹",
+      "createdAt": "2026-10-31T06:22:45.975Z"
+    },
+    {
+      "_id": "mvw2jqam5kyrz",
+      "name": "Rohan Verma",
+      "email": "student_1793431059857@test.com",
+      "password": "$2a$10$Ac/F3yXa7LxhDOoAx.EftOggXXtv7CryOMpn4Vtn2PzzzNymVNB6u",
+      "currency": "₹",
+      "createdAt": "2026-10-31T07:17:39.934Z"
+    },
+    {
+      "_id": "mvw2o6i34nxi1",
+      "name": "Rohan Verma",
+      "email": "student_1793431267478@test.com",
+      "password": "$2a$10$.fG0sV4bTfhK3YxxlgsyfuZ6BPSYsyQu2121qnfhpu75Nw2sJRhEK",
+      "currency": "₹",
+      "createdAt": "2026-10-31T07:21:07.563Z"
+    },
+    {
+      "_id": "mw3jrfudfynbo",
+      "name": "hibana",
+      "email": "hibana@gmail.com",
+      "password": "$2a$10$5Boz3xdyCKh9nbYVvNChkO4QsS734RPosrIIVR0NfdaCrQIn0W20C",
+      "currency": "₹",
+      "createdAt": "2026-11-05T12:53:56.341Z"
+    },
+    {
+      "_id": "mw3lhk6dlce47",
+      "name": "Rohan Verma",
+      "email": "student_1793886134573@test.com",
+      "password": "$2a$10$nBSPZmftrJr8clxPYF/pJOtFCzSN/gZAU21txw62CwzIAzYSPREWW",
+      "currency": "₹",
+      "createdAt": "2026-11-05T13:42:14.629Z"
+    }
+  ],
+  "categories": [
+    {
+      "name": "Food",
+      "icon": "bi-egg-fried",
+      "color": "#ff6b6b",
+      "description": "Groceries, restaurants, snacks, drinks"
+    },
+    {
+      "name": "Travel",
+      "icon": "bi-airplane",
+      "color": "#4dabf7",
+      "description": "Flights, train, metro, fuel, cab"
+    },
+    {
+      "name": "Shopping",
+      "icon": "bi-bag",
+      "color": "#cc5de8",
+      "description": "Clothes, electronics, personal care"
+    },
+    {
+      "name": "Education",
+      "icon": "bi-book",
+      "color": "#20c997",
+      "description": "Books, courses, tuition, supplies"
+    },
+    {
+      "name": "Health",
+      "icon": "bi-heart-pulse",
+      "color": "#fa5252",
+      "description": "Medicines, hospital, gym, therapy"
+    },
+    {
+      "name": "Entertainment",
+      "icon": "bi-film",
+      "color": "#fcc419",
+      "description": "Movies, streaming, games, outings"
+    },
+    {
+      "name": "Bills",
+      "icon": "bi-receipt",
+      "color": "#ff922b",
+      "description": "Electricity, water, rent, internet, mobile"
+    },
+    {
+      "name": "Others",
+      "icon": "bi-three-dots",
+      "color": "#868e96",
+      "description": "Miscellaneous expenses"
+    }
+  ],
+  "expenses": [
+    {
+      "_id": "mw8vnhlj01m3p",
+      "user": "mw3jrfudfynbo",
+      "title": "shopping",
+      "amount": 1500,
+      "category": "Shopping",
+      "description": "",
+      "date": "2026-11-09T00:00:00.000Z",
+      "paymentMethod": "Cash",
+      "createdAt": "2026-11-09T06:25:38.263Z"
+    },
+    {
+      "_id": "mw8vmr2efxys3",
+      "user": "mw3jrfudfynbo",
+      "title": "recharge",
+      "amount": 399,
+      "category": "Bills",
+      "description": "",
+      "date": "2026-11-09T00:00:00.000Z",
+      "paymentMethod": "UPI",
+      "createdAt": "2026-11-09T06:25:03.878Z"
+    },
+    {
+      "_id": "mvw0jwf9ffzhg",
+      "user": "demo_user_id_101",
+      "title": "Organic Grocery & Fresh Vegetables",
+      "amount": 840,
+      "category": "Food",
+      "description": "Vegetables and dairy from supermarket",
+      "date": "2026-10-31T06:21:48.645Z",
+      "paymentMethod": "UPI",
+      "createdAt": "2026-10-31T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfa5yoq4",
+      "user": "demo_user_id_101",
+      "title": "Morning Metro Card Recharge",
+      "amount": 300,
+      "category": "Travel",
+      "description": "Metro pass recharge for commute",
+      "date": "2026-10-31T06:21:48.645Z",
+      "paymentMethod": "UPI",
+      "createdAt": "2026-10-31T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfavt8dc",
+      "user": "demo_user_id_101",
+      "title": "Starbucks Coffee & Sandwich",
+      "amount": 480,
+      "category": "Food",
+      "description": "Afternoon coffee break with team",
+      "date": "2026-10-30T06:21:48.645Z",
+      "paymentMethod": "Credit Card",
+      "createdAt": "2026-10-30T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfa0eckb",
+      "user": "demo_user_id_101",
+      "title": "High-Speed Broadband Internet Bill",
+      "amount": 1199,
+      "category": "Bills",
+      "description": "Monthly Airtel fiber broadband subscription",
+      "date": "2026-10-29T06:21:48.645Z",
+      "paymentMethod": "Net Banking",
+      "createdAt": "2026-10-29T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfavasz4",
+      "user": "demo_user_id_101",
+      "title": "Amazon Electronics & USB Cables",
+      "amount": 1450,
+      "category": "Shopping",
+      "description": "Anker USB-C cable and phone stand",
+      "date": "2026-10-28T06:21:48.645Z",
+      "paymentMethod": "Credit Card",
+      "createdAt": "2026-10-28T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfayiqpl",
+      "user": "demo_user_id_101",
+      "title": "Monthly Gym & Fitness Membership",
+      "amount": 2000,
+      "category": "Health",
+      "description": "Gym monthly fee",
+      "date": "2026-10-27T06:21:48.645Z",
+      "paymentMethod": "Debit Card",
+      "createdAt": "2026-10-27T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfac1zb9",
+      "user": "demo_user_id_101",
+      "title": "Weekend Movie & Popcorn (PVR IMAX)",
+      "amount": 750,
+      "category": "Entertainment",
+      "description": "Movie night with friends",
+      "date": "2026-10-26T06:21:48.645Z",
+      "paymentMethod": "UPI",
+      "createdAt": "2026-10-26T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfav81bq",
+      "user": "demo_user_id_101",
+      "title": "Petrol Fuel Station",
+      "amount": 1500,
+      "category": "Travel",
+      "description": "Full tank fuel for bike",
+      "date": "2026-10-25T06:21:48.645Z",
+      "paymentMethod": "Debit Card",
+      "createdAt": "2026-10-25T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfarrk45",
+      "user": "demo_user_id_101",
+      "title": "House Electricity Bill",
+      "amount": 2350,
+      "category": "Bills",
+      "description": "State electricity board online bill",
+      "date": "2026-10-21T06:21:48.645Z",
+      "paymentMethod": "Net Banking",
+      "createdAt": "2026-10-21T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfalzi3v",
+      "user": "demo_user_id_101",
+      "title": "Doctor Consultation & Multivitamins",
+      "amount": 1200,
+      "category": "Health",
+      "description": "General checkup and prescribed supplements",
+      "date": "2026-10-19T06:21:48.645Z",
+      "paymentMethod": "Cash",
+      "createdAt": "2026-10-19T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfacq76d",
+      "user": "demo_user_id_101",
+      "title": "Udemy Full-Stack Web Dev Course",
+      "amount": 699,
+      "category": "Education",
+      "description": "Advanced Node.js & React course",
+      "date": "2026-10-17T06:21:48.645Z",
+      "paymentMethod": "Credit Card",
+      "createdAt": "2026-10-17T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfanb2qk",
+      "user": "demo_user_id_101",
+      "title": "Casual Denim Jacket & T-shirt",
+      "amount": 2499,
+      "category": "Shopping",
+      "description": "H&M weekend shopping festival",
+      "date": "2026-10-15T06:21:48.645Z",
+      "paymentMethod": "Credit Card",
+      "createdAt": "2026-10-15T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfadgd6c",
+      "user": "demo_user_id_101",
+      "title": "Family Dinner at Barbeque Nation",
+      "amount": 3200,
+      "category": "Food",
+      "description": "Buffet dinner celebration",
+      "date": "2026-10-13T06:21:48.645Z",
+      "paymentMethod": "Debit Card",
+      "createdAt": "2026-10-13T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfa7bgq2",
+      "user": "demo_user_id_101",
+      "title": "Spotify Premium Family Plan",
+      "amount": 199,
+      "category": "Entertainment",
+      "description": "Monthly music streaming subscription",
+      "date": "2026-10-11T06:21:48.645Z",
+      "paymentMethod": "Credit Card",
+      "createdAt": "2026-10-11T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfakt254",
+      "user": "demo_user_id_101",
+      "title": "Academic Reference Books & Notebooks",
+      "amount": 950,
+      "category": "Education",
+      "description": "MCA Database Systems reference guide",
+      "date": "2026-10-09T06:21:48.645Z",
+      "paymentMethod": "Cash",
+      "createdAt": "2026-10-09T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfalfbzx",
+      "user": "demo_user_id_101",
+      "title": "Uber Cab to City Center",
+      "amount": 420,
+      "category": "Travel",
+      "description": "Rainy day commute to meeting",
+      "date": "2026-10-07T06:21:48.645Z",
+      "paymentMethod": "UPI",
+      "createdAt": "2026-10-07T06:21:48.645Z"
+    },
+    {
+      "_id": "mvw0jwfahwe0e",
+      "user": "demo_user_id_101",
+      "title": "Apartment Monthly Maintenance Fee",
+      "amount": 1800,
+      "category": "Bills",
+      "description": "Society maintenance and water charge",
+      "date": "2026-09-04T18:30:00.000Z",
+      "paymentMethod": "Net Banking",
+      "createdAt": "2026-09-04T18:30:00.000Z"
+    },
+    {
+      "_id": "mvw0jwfa7llyw",
+      "user": "demo_user_id_101",
+      "title": "Supermarket Wholesale Grocery",
+      "amount": 4200,
+      "category": "Food",
+      "description": "Monthly staples, rice, flour, oil",
+      "date": "2026-09-09T18:30:00.000Z",
+      "paymentMethod": "Credit Card",
+      "createdAt": "2026-09-09T18:30:00.000Z"
+    },
+    {
+      "_id": "mvw0jwfa4e22i",
+      "user": "demo_user_id_101",
+      "title": "Train Ticket Reservation to Home",
+      "amount": 1450,
+      "category": "Travel",
+      "description": "IRCTC festival holiday travel ticket",
+      "date": "2026-09-14T18:30:00.000Z",
+      "paymentMethod": "UPI",
+      "createdAt": "2026-09-14T18:30:00.000Z"
+    },
+    {
+      "_id": "mvw0jwfa63zlr",
+      "user": "demo_user_id_101",
+      "title": "Footwear Running Shoes (Nike)",
+      "amount": 3799,
+      "category": "Shopping",
+      "description": "Sports sneakers on festive discount",
+      "date": "2026-09-17T18:30:00.000Z",
+      "paymentMethod": "Credit Card",
+      "createdAt": "2026-09-17T18:30:00.000Z"
+    },
+    {
+      "_id": "mvw0jwfamma5z",
+      "user": "demo_user_id_101",
+      "title": "Dental Cleaning & Checkup",
+      "amount": 1500,
+      "category": "Health",
+      "description": "Routine dental clinic appointment",
+      "date": "2026-09-21T18:30:00.000Z",
+      "paymentMethod": "Cash",
+      "createdAt": "2026-09-21T18:30:00.000Z"
+    },
+    {
+      "_id": "mvw0jwfabw212",
+      "user": "demo_user_id_101",
+      "title": "Netflix 4K Ultra Subscription",
+      "amount": 649,
+      "category": "Entertainment",
+      "description": "Monthly OTT subscription",
+      "date": "2026-09-24T18:30:00.000Z",
+      "paymentMethod": "Credit Card",
+      "createdAt": "2026-09-24T18:30:00.000Z"
+    },
+    {
+      "_id": "mvw0jwfa9ftm2",
+      "user": "demo_user_id_101",
+      "title": "Two-Wheeler Servicing & Oil Change",
+      "amount": 2200,
+      "category": "Travel",
+      "description": "Periodic bike maintenance service",
+      "date": "2026-08-07T18:30:00.000Z",
+      "paymentMethod": "UPI",
+      "createdAt": "2026-08-07T18:30:00.000Z"
+    },
+    {
+      "_id": "mvw0jwfaspvk7",
+      "user": "demo_user_id_101",
+      "title": "Cloud Computing Exam Fee",
+      "amount": 5500,
+      "category": "Education",
+      "description": "AWS Certified Developer exam voucher",
+      "date": "2026-08-13T18:30:00.000Z",
+      "paymentMethod": "Credit Card",
+      "createdAt": "2026-08-13T18:30:00.000Z"
+    },
+    {
+      "_id": "mvw0jwfarzxzs",
+      "user": "demo_user_id_101",
+      "title": "Dining with College Friends",
+      "amount": 1650,
+      "category": "Food",
+      "description": "Dinner reunion at Italian bistro",
+      "date": "2026-08-19T18:30:00.000Z",
+      "paymentMethod": "Debit Card",
+      "createdAt": "2026-08-19T18:30:00.000Z"
+    }
+  ]
+}

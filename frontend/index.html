@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ExpenseTrack - Take Control of Your Money</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Fonts Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <!-- Chart.js for Sample Dashboard Preview -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="landing-body">
+
+  <!-- 1. Navigation Bar -->
+  <nav class="navbar navbar-expand-lg landing-nav-dark sticky-top" id="mainNav">
+    <div class="container">
+      <a class="navbar-brand landing-brand" href="#home" style="color: #FFFFFF !important;">
+        <div class="landing-brand-icon">
+          <i class="bi bi-wallet2"></i>
+        </div>
+        <span style="color: #FFFFFF !important;">ExpenseTrack</span>
+      </a>
+
+      <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse" data-bs-target="#landingNavbar" aria-label="Toggle navigation">
+        <i class="bi bi-list fs-2 text-white"></i>
+      </button>
+
+      <div class="collapse navbar-collapse" id="landingNavbar">
+        <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+          <li class="nav-item"><a class="nav-link nav-link-landing" href="#home" style="color: #FFFFFF !important;">Home</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-landing" href="#about" style="color: #FFFFFF !important;">About</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-landing" href="#features" style="color: #FFFFFF !important;">Features</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-landing" href="#how-it-works" style="color: #FFFFFF !important;">How It Works</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-landing" href="#preview" style="color: #FFFFFF !important;">Preview</a></li>
+          <li class="nav-item"><a class="nav-link nav-link-landing" href="#contact" style="color: #FFFFFF !important;">Contact</a></li>
+        </ul>
+
+        <div class="d-flex align-items-center gap-2" id="navAuthButtons">
+          <a href="login.html" class="btn btn-navy-outline px-3 py-2" style="color: #FFFFFF !important;">
+            <i class="bi bi-box-arrow-in-right me-1"></i> Login
+          </a>
+          <a href="register.html" class="btn btn-mint px-3 py-2">
+            <span>Get Started</span> <i class="bi bi-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 2. Hero Section -->
+  <section class="hero-landing text-center" id="home">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="hero-pill-badge" style="color: #FFFFFF !important;">
+            <span class="pulse-dot-mint"></span>
+            <span style="color: #FFFFFF !important;">Intelligent Financial SaaS Platform</span>
+          </div>
+
+          <h1 class="hero-heading-landing" style="color: #FFFFFF !important;">
+            Take Control of <span style="color: #FFFFFF !important;">Your Money</span>
+          </h1>
+
+          <p class="hero-subtitle-landing" style="color: #FFFFFF !important;">
+            Track your expenses, manage your budget, and make smarter financial decisions.
+          </p>
+
+          <div class="d-flex flex-wrap justify-content-center gap-3">
+            <a href="register.html" class="btn btn-mint btn-lg px-4 py-3">
+              <i class="bi bi-lightning-charge-fill me-1"></i> Get Started
+            </a>
+            <a href="login.html" class="btn btn-navy-outline btn-lg px-4 py-3" style="color: #FFFFFF !important;">
+              <i class="bi bi-box-arrow-in-right me-1"></i> Login
+            </a>
+          </div>
+
+          <!-- Trust Badges -->
+          <div class="d-flex flex-wrap justify-content-center gap-4 mt-4 small" style="color: #FFFFFF !important;">
+            <span style="color: #FFFFFF !important;"><i class="bi bi-shield-check text-success me-1" style="color: #00f5a0 !important;"></i> Bank-grade Encryption</span>
+            <span style="color: #FFFFFF !important;"><i class="bi bi-check2-circle text-success me-1" style="color: #00f5a0 !important;"></i> 100% Free Forever</span>
+            <span style="color: #FFFFFF !important;"><i class="bi bi-speedometer2 text-success me-1" style="color: #00f5a0 !important;"></i> Real-Time Analytics</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Attractive Expense Dashboard Illustration -->
+      <div class="row justify-content-center">
+        <div class="col-lg-10 hero-mockup-wrapper">
+          <!-- Floating notification badge left -->
+          <div class="floating-pill pill-left" style="color: #FFFFFF !important;">
+            <i class="bi bi-graph-up-arrow fs-5" style="color: #00f5a0;"></i>
+            <div>
+              <div style="font-size: 0.725rem; color: #FFFFFF !important;">Savings Rate</div>
+              <div style="color: #FFFFFF !important; font-weight: 700;">+18.4% This Month</div>
+            </div>
+          </div>
+
+          <!-- Floating notification badge right -->
+          <div class="floating-pill pill-right" style="color: #FFFFFF !important;">
+            <i class="bi bi-shield-lock-fill fs-5" style="color: #00f5a0;"></i>
+            <div>
+              <div style="font-size: 0.725rem; color: #FFFFFF !important;">Data Protection</div>
+              <div style="color: #FFFFFF !important; font-weight: 700;">JWT Encrypted Sync</div>
+            </div>
+          </div>
+
+          <div class="hero-mockup-card">
+            <!-- Window Bar -->
+            <div class="mockup-header-bar">
+              <div class="window-dots">
+                <span class="window-dot dot-red"></span>
+                <span class="window-dot dot-yellow"></span>
+                <span class="window-dot dot-green"></span>
+              </div>
+              <div class="small font-monospace" style="color: #FFFFFF !important;">
+                <i class="bi bi-lock-fill me-1" style="color: #00f5a0;"></i> https://expensetrack.app/dashboard
+              </div>
+              <div class="d-flex align-items-center gap-2">
+                <span class="badge" style="background: rgba(0, 245, 160, 0.15); color: #FFFFFF !important; border: 1px solid rgba(0, 245, 160, 0.3);">Live Hub</span>
+              </div>
+            </div>
+
+            <!-- Illustration Content Preview -->
+            <div class="row g-3 text-start mb-3">
+              <div class="col-md-3 col-6">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06);">
+                  <div class="small" style="color: #FFFFFF !important;">Total Expenses</div>
+                  <h4 class="fw-bold mb-0 mt-1" style="color: #FFFFFF !important;">₹ 42,784.00</h4>
+                  <small style="color: #FFFFFF !important;"><i class="bi bi-arrow-down-right" style="color: #00f5a0;"></i> Optimized</small>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06);">
+                  <div class="small" style="color: #FFFFFF !important;">Today's Spend</div>
+                  <h4 class="fw-bold mb-0 mt-1" style="color: #FFFFFF !important;">₹ 1,140.00</h4>
+                  <small style="color: #FFFFFF !important;">2 Transactions</small>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06);">
+                  <div class="small" style="color: #FFFFFF !important;">Monthly Spend</div>
+                  <h4 class="fw-bold mb-0 mt-1" style="color: #FFFFFF !important;">₹ 20,036.00</h4>
+                  <small style="color: #FFFFFF !important;">Within Budget</small>
+                </div>
+              </div>
+              <div class="col-md-3 col-6">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.06);">
+                  <div class="small" style="color: #FFFFFF !important;">Top Category</div>
+                  <h4 class="fw-bold mb-0 mt-1" style="color: #FFFFFF !important;">Shopping</h4>
+                  <small style="color: #FFFFFF !important;">31.2% Share</small>
+                </div>
+              </div>
+            </div>
+
+            <!-- Mini Graphic Visualization Line -->
+            <div class="p-3 rounded-3 text-start" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05);">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="small fw-semibold" style="color: #FFFFFF !important;">Monthly Cashflow Flow & Allocation</span>
+                <span class="small" style="color: #FFFFFF !important;"><i class="bi bi-circle-fill me-1" style="font-size: 8px; color: #00f5a0;"></i> Live Forecast</span>
+              </div>
+              <div class="progress" style="height: 10px; background: rgba(255, 255, 255, 0.08);">
+                <div class="progress-bar" style="width: 35%; background-color: #00f5a0;" title="Food"></div>
+                <div class="progress-bar" style="width: 25%; background-color: #38bdf8;" title="Travel"></div>
+                <div class="progress-bar" style="width: 20%; background-color: #c084fc;" title="Bills"></div>
+                <div class="progress-bar" style="width: 20%; background-color: #fb923c;" title="Others"></div>
+              </div>
+              <div class="d-flex flex-wrap gap-3 mt-2 small" style="color: #FFFFFF !important; font-size: 0.785rem;">
+                <span style="color: #FFFFFF !important;"><span class="badge rounded-circle p-1 me-1" style="background-color: #00f5a0;"> </span> Food (35%)</span>
+                <span style="color: #FFFFFF !important;"><span class="badge rounded-circle p-1 me-1" style="background-color: #38bdf8;"> </span> Travel (25%)</span>
+                <span style="color: #FFFFFF !important;"><span class="badge rounded-circle p-1 me-1" style="background-color: #c084fc;"> </span> Bills (20%)</span>
+                <span style="color: #FFFFFF !important;"><span class="badge rounded-circle p-1 me-1" style="background-color: #fb923c;"> </span> Others (20%)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Features Section -->
+  <section class="py-5" id="features">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="badge px-3 py-2 rounded-pill small fw-bold text-uppercase" style="background: rgba(0, 245, 160, 0.1); color: #FFFFFF !important; border: 1px solid rgba(0, 245, 160, 0.25);">
+          Core Features
+        </span>
+        <h2 class="fw-bold mt-3 mb-2" style="font-size: 2.4rem; color: #FFFFFF !important;">
+          Built for Precision and Simplicity
+        </h2>
+        <p class="mx-auto" style="max-width: 620px; color: #FFFFFF !important;">
+          Everything you need to track spending habits, control recurring bills, and optimize personal cashflow without tedious spreadsheets.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Feature 1: Daily Expense Tracking -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card-dark">
+            <div class="feature-icon-mint">
+              <i class="bi bi-calendar2-check"></i>
+            </div>
+            <h4 class="fw-bold mb-2" style="color: #FFFFFF !important;">Daily Expense Tracking</h4>
+            <p class="mb-0" style="color: #FFFFFF !important;">
+              Quickly record day-to-day expenditures with titles, exact amounts, timestamps, and preferred payment tags in seconds.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 2: Expense Categories -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card-dark">
+            <div class="feature-icon-mint">
+              <i class="bi bi-tags"></i>
+            </div>
+            <h4 class="fw-bold mb-2" style="color: #FFFFFF !important;">Expense Categories</h4>
+            <p class="mb-0" style="color: #FFFFFF !important;">
+              Organize every expense into pre-configured categories: Food, Travel, Shopping, Education, Health, Entertainment, Bills, and Others.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 3: Monthly Reports -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card-dark">
+            <div class="feature-icon-mint">
+              <i class="bi bi-file-earmark-bar-graph"></i>
+            </div>
+            <h4 class="fw-bold mb-2" style="color: #FFFFFF !important;">Monthly Reports</h4>
+            <p class="mb-0" style="color: #FFFFFF !important;">
+              Generate comprehensive monthly financial statements with day-by-day spending curves, daily averages, and printable PDF export.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 4: Interactive Dashboard -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card-dark">
+            <div class="feature-icon-mint">
+              <i class="bi bi-speedometer2"></i>
+            </div>
+            <h4 class="fw-bold mb-2" style="color: #FFFFFF !important;">Interactive Dashboard</h4>
+            <p class="mb-0" style="color: #FFFFFF !important;">
+              Real-time financial hub displaying total cumulative spend, today's transactions, category doughnut charts, and recent activity.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 5: Search and Filter -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card-dark">
+            <div class="feature-icon-mint">
+              <i class="bi bi-search"></i>
+            </div>
+            <h4 class="fw-bold mb-2" style="color: #FFFFFF !important;">Search and Filter</h4>
+            <p class="mb-0" style="color: #FFFFFF !important;">
+              Find any past transaction instantly using keyword search, date range filters, category dropdowns, and download clean CSV spreadsheets.
+            </p>
+          </div>
+        </div>
+
+        <!-- Feature 6: Secure User Account -->
+        <div class="col-lg-4 col-md-6">
+          <div class="feature-card-dark">
+            <div class="feature-icon-mint">
+              <i class="bi bi-shield-lock"></i>
+            </div>
+            <h4 class="fw-bold mb-2" style="color: #FFFFFF !important;">Secure User Account</h4>
+            <p class="mb-0" style="color: #FFFFFF !important;">
+              Enterprise-grade password hashing with bcrypt and stateless JWT authentication ensures your private expense data remains yours alone.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. How It Works -->
+  <section class="py-5" id="how-it-works" style="background: rgba(13, 23, 51, 0.4); border-top: 1px solid rgba(255, 255, 255, 0.05); border-bottom: 1px solid rgba(255, 255, 255, 0.05);">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="badge px-3 py-2 rounded-pill small fw-bold text-uppercase" style="background: rgba(0, 245, 160, 0.1); color: #FFFFFF !important; border: 1px solid rgba(0, 245, 160, 0.25);">
+          Simple 3-Step Process
+        </span>
+        <h2 class="fw-bold mt-3 mb-2" style="font-size: 2.4rem; color: #FFFFFF !important;">
+          How It Works
+        </h2>
+        <p class="mx-auto" style="max-width: 580px; color: #FFFFFF !important;">
+          Start tracking and optimizing your financial habits in less than two minutes.
+        </p>
+      </div>
+
+      <div class="row g-4">
+        <!-- Step 1 -->
+        <div class="col-md-4">
+          <div class="step-card-dark">
+            <div class="step-number-mint">1</div>
+            <h4 class="fw-bold mb-2" style="color: #FFFFFF !important;">Create an Account</h4>
+            <p class="mb-0" style="color: #FFFFFF !important;">
+              Sign up in 30 seconds with your email and select your preferred currency symbol (₹ INR, $ USD, € EUR, £ GBP).
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="col-md-4">
+          <div class="step-card-dark">
+            <div class="step-number-mint">2</div>
+            <h4 class="fw-bold mb-2" style="color: #FFFFFF !important;">Add Your Expenses</h4>
+            <p class="mb-0" style="color: #FFFFFF !important;">
+              Log daily expenditures quickly using the intuitive Add Expense form or the 1-click Quick Add modal.
+            </p>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="col-md-4">
+          <div class="step-card-dark">
+            <div class="step-number-mint">3</div>
+            <h4 class="fw-bold mb-2" style="color: #FFFFFF !important;">Track Your Spending</h4>
+            <p class="mb-0" style="color: #FFFFFF !important;">
+              Gain deep financial clarity through interactive charts, monthly breakdown comparisons, and detailed transaction histories.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Dashboard Preview (Sample Interactive Model) -->
+  <section class="py-5" id="preview">
+    <div class="container py-4">
+      <div class="text-center mb-4">
+        <span class="preview-badge-pill" style="color: #FFFFFF !important;">
+          <i class="bi bi-eye-fill me-1" style="color: #00f5a0;"></i> Dashboard Preview &bull; Sample Interactive Model
+        </span>
+        <h2 class="fw-bold mt-3 mb-2" style="font-size: 2.4rem; color: #FFFFFF !important;">
+          Experience The ExpenseTrack Dashboard
+        </h2>
+        <p class="mx-auto" style="max-width: 660px; color: #FFFFFF !important;">
+          Here is an interactive sample preview of what your financial dashboard looks like once you start tracking.
+        </p>
+      </div>
+
+      <div class="preview-card-dark">
+        <!-- Live Preview Header Banner -->
+        <div class="d-flex flex-wrap align-items-center justify-content-between pb-3 mb-4 border-bottom" style="border-color: rgba(255, 255, 255, 0.08) !important;">
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge" style="background: rgba(0, 245, 160, 0.2); color: #FFFFFF !important; border: 1px solid #00f5a0;">
+              SAMPLE DATA PREVIEW
+            </span>
+            <small style="color: #FFFFFF !important;">(Public presentation view &bull; No private user data exposed)</small>
+          </div>
+          <div>
+            <a href="register.html" class="btn btn-sm btn-mint">
+              <i class="bi bi-plus-circle me-1"></i> Launch Your Own Dashboard
+            </a>
+          </div>
+        </div>
+
+        <!-- 4 Sample Metric Cards -->
+        <div class="row g-3 mb-4">
+          <div class="col-xl-3 col-md-6">
+            <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+              <span class="small" style="color: #FFFFFF !important;">Total Expenses</span>
+              <h3 class="fw-bold mt-1 mb-0" style="color: #FFFFFF !important;">₹ 42,784.00</h3>
+              <small style="color: #FFFFFF !important;"><i class="bi bi-arrow-up-right" style="color: #00f5a0;"></i> Cumulative Spend</small>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+              <span class="small" style="color: #FFFFFF !important;">Today's Expenses</span>
+              <h3 class="fw-bold mt-1 mb-0" style="color: #FFFFFF !important;">₹ 1,140.00</h3>
+              <small style="color: #FFFFFF !important;">Current Day Total</small>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+              <span class="small" style="color: #FFFFFF !important;">This Month's Spend</span>
+              <h3 class="fw-bold mt-1 mb-0" style="color: #FFFFFF !important;">₹ 20,036.00</h3>
+              <small style="color: #FFFFFF !important;"><i class="bi bi-check2-circle" style="color: #00f5a0;"></i> On Target</small>
+            </div>
+          </div>
+          <div class="col-xl-3 col-md-6">
+            <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+              <span class="small" style="color: #FFFFFF !important;">Total Transactions</span>
+              <h3 class="fw-bold mt-1 mb-0" style="color: #FFFFFF !important;">25 Records</h3>
+              <small style="color: #FFFFFF !important;">Categorized</small>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Charts Row -->
+        <div class="row g-4 mb-4">
+          <!-- Monthly Spending Trend Bar Chart -->
+          <div class="col-lg-7">
+            <div class="p-3 rounded-3 h-100" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08);">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="fw-semibold" style="color: #FFFFFF !important;">Monthly Spending Trend (Sample)</span>
+                <span class="badge" style="background: rgba(255, 255, 255, 0.05); color: #FFFFFF !important;">Annual View</span>
+              </div>
+              <div style="position: relative; height: 260px; width: 100%;">
+                <canvas id="previewMonthlyChart"></canvas>
+              </div>
+            </div>
+          </div>
+
+          <!-- Category Doughnut Chart -->
+          <div class="col-lg-5">
+            <div class="p-3 rounded-3 h-100" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08);">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <span class="fw-semibold" style="color: #FFFFFF !important;">Category Distribution (Sample)</span>
+                <span class="badge" style="background: rgba(0, 245, 160, 0.1); color: #FFFFFF !important;">6 Categories</span>
+              </div>
+              <div style="position: relative; height: 260px; width: 100%;">
+                <canvas id="previewCategoryChart"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sample Recent Transactions Table -->
+        <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.08);">
+          <div class="d-flex justify-content-between align-items-center mb-3">
+            <span class="fw-semibold" style="color: #FFFFFF !important;">Sample Recent Transactions</span>
+            <span class="small" style="color: #FFFFFF !important;">Previewing 4 recent records</span>
+          </div>
+          <div class="table-responsive">
+            <table class="table table-dark table-borderless align-middle mb-0 landing-preview-table" style="--bs-table-bg: transparent !important; background-color: transparent !important; font-size: 0.9rem; color: #FFFFFF !important;">
+              <thead style="border-bottom: 1px solid rgba(255, 255, 255, 0.08); background: transparent !important; color: #FFFFFF !important; font-size: 0.8rem; text-transform: uppercase;">
+                <tr style="background: transparent !important;">
+                  <th style="background: transparent !important; color: #FFFFFF !important;">Title</th>
+                  <th style="background: transparent !important; color: #FFFFFF !important;">Category</th>
+                  <th style="background: transparent !important; color: #FFFFFF !important;">Payment</th>
+                  <th style="background: transparent !important; color: #FFFFFF !important;">Date</th>
+                  <th class="text-end" style="background: transparent !important; color: #FFFFFF !important;">Amount</th>
+                </tr>
+              </thead>
+              <tbody style="background: transparent !important; color: #FFFFFF !important;">
+                <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.04); background: transparent !important;">
+                  <td style="background: transparent !important; color: #FFFFFF !important;">
+                    <div class="fw-semibold" style="color: #FFFFFF !important;">Organic Grocery & Fresh Vegetables</div>
+                    <small style="color: #FFFFFF !important;">Supermarket weekly staples</small>
+                  </td>
+                  <td style="background: transparent !important;"><span class="badge" style="background: rgba(255, 107, 107, 0.2); color: #FFFFFF !important; border: 1px solid #ff6b6b;"><i class="bi bi-egg-fried me-1" style="color: #ff6b6b;"></i>Food</span></td>
+                  <td style="background: transparent !important;"><span class="badge badge-payment">UPI</span></td>
+                  <td style="background: transparent !important; color: #FFFFFF !important;">Today</td>
+                  <td class="text-end fw-bold" style="background: transparent !important; color: #FFFFFF !important;">-₹ 840.00</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.04); background: transparent !important;">
+                  <td style="background: transparent !important; color: #FFFFFF !important;">
+                    <div class="fw-semibold" style="color: #FFFFFF !important;">High-Speed Broadband Internet</div>
+                    <small style="color: #FFFFFF !important;">Monthly fiber connection bill</small>
+                  </td>
+                  <td style="background: transparent !important;"><span class="badge" style="background: rgba(255, 146, 43, 0.2); color: #FFFFFF !important; border: 1px solid #ff922b;"><i class="bi bi-receipt me-1" style="color: #ff922b;"></i>Bills</span></td>
+                  <td style="background: transparent !important;"><span class="badge badge-payment">Net Banking</span></td>
+                  <td style="background: transparent !important; color: #FFFFFF !important;">2 days ago</td>
+                  <td class="text-end fw-bold" style="background: transparent !important; color: #FFFFFF !important;">-₹ 1,199.00</td>
+                </tr>
+                <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.04); background: transparent !important;">
+                  <td style="background: transparent !important; color: #FFFFFF !important;">
+                    <div class="fw-semibold" style="color: #FFFFFF !important;">Amazon Electronics & USB Cables</div>
+                    <small style="color: #FFFFFF !important;">Anker charger and phone stand</small>
+                  </td>
+                  <td style="background: transparent !important;"><span class="badge" style="background: rgba(204, 93, 232, 0.2); color: #FFFFFF !important; border: 1px solid #cc5de8;"><i class="bi bi-bag me-1" style="color: #cc5de8;"></i>Shopping</span></td>
+                  <td style="background: transparent !important;"><span class="badge badge-payment">Credit Card</span></td>
+                  <td style="background: transparent !important; color: #FFFFFF !important;">3 days ago</td>
+                  <td class="text-end fw-bold" style="background: transparent !important; color: #FFFFFF !important;">-₹ 1,450.00</td>
+                </tr>
+                <tr style="background: transparent !important;">
+                  <td style="background: transparent !important; color: #FFFFFF !important;">
+                    <div class="fw-semibold" style="color: #FFFFFF !important;">Monthly Gym & Fitness Membership</div>
+                    <small style="color: #FFFFFF !important;">Health club monthly fee</small>
+                  </td>
+                  <td style="background: transparent !important;"><span class="badge" style="background: rgba(250, 82, 82, 0.2); color: #FFFFFF !important; border: 1px solid #fa5252;"><i class="bi bi-heart-pulse me-1" style="color: #fa5252;"></i>Health</span></td>
+                  <td style="background: transparent !important;"><span class="badge badge-payment">Debit Card</span></td>
+                  <td style="background: transparent !important; color: #FFFFFF !important;">4 days ago</td>
+                  <td class="text-end fw-bold" style="background: transparent !important; color: #FFFFFF !important;">-₹ 2,000.00</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="py-5" id="about">
+    <div class="container py-4">
+      <div class="row align-items-center g-5">
+        <div class="col-lg-6">
+          <span class="badge px-3 py-2 rounded-pill small fw-bold text-uppercase" style="background: rgba(0, 245, 160, 0.1); color: #FFFFFF !important; border: 1px solid rgba(0, 245, 160, 0.25);">
+            About ExpenseTrack
+          </span>
+          <h2 class="fw-bold mt-3 mb-3" style="font-size: 2.3rem; color: #FFFFFF !important;">
+            Designed for Financial Freedom and Everyday Clarity
+          </h2>
+          <p class="leading-relaxed mb-4" style="color: #FFFFFF !important;">
+            Managing personal finances shouldn't be stressful or locked behind cluttered spreadsheets. ExpenseTrack was designed to provide a lightweight, modern, and beautiful web experience for everyday budgeters, students, freelancers, and working professionals.
+          </p>
+          <div class="d-flex flex-column gap-3">
+            <div class="d-flex align-items-start gap-3">
+              <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px; background: rgba(0, 245, 160, 0.15); color: #00f5a0;">
+                <i class="bi bi-shield-check fs-5"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1" style="color: #FFFFFF !important;">Privacy First & User Isolated</h6>
+                <p class="small mb-0" style="color: #FFFFFF !important;">Every user's expense ledger is strictly isolated and password-hashed. We never sell or share your data.</p>
+              </div>
+            </div>
+            <div class="d-flex align-items-start gap-3">
+              <div class="rounded-circle d-flex align-items-center justify-content-center flex-shrink-0" style="width: 38px; height: 38px; background: rgba(0, 245, 160, 0.15); color: #00f5a0;">
+                <i class="bi bi-graph-up fs-5"></i>
+              </div>
+              <div>
+                <h6 class="fw-bold mb-1" style="color: #FFFFFF !important;">Actionable Visual Analytics</h6>
+                <p class="small mb-0" style="color: #FFFFFF !important;">Clear category distributions and monthly curve graphs help you instantly identify where to save.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="p-4 rounded-4" style="background: #0d1733; border: 1px solid rgba(0, 245, 160, 0.2); box-shadow: 0 20px 40px rgba(0,0,0,0.5);">
+            <div class="row g-3 text-center">
+              <div class="col-6">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06);">
+                  <h2 class="fw-bold mb-1" style="color: #FFFFFF !important;">99.9%</h2>
+                  <span class="small" style="color: #FFFFFF !important;">Platform Reliability</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06);">
+                  <h2 class="fw-bold mb-1" style="color: #FFFFFF !important;">8+</h2>
+                  <span class="small" style="color: #FFFFFF !important;">Expense Categories</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06);">
+                  <h2 class="fw-bold mb-1" style="color: #FFFFFF !important;">0s</h2>
+                  <span class="small" style="color: #FFFFFF !important;">Delay Sync Time</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.06);">
+                  <h2 class="fw-bold mb-1" style="color: #FFFFFF !important;">100%</h2>
+                  <span class="small" style="color: #FFFFFF !important;">Free Academic Project</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Call To Action (CTA) -->
+  <section class="py-5">
+    <div class="container py-4">
+      <div class="cta-box-dark">
+        <h2 class="fw-bold mb-3" style="font-size: 2.75rem; color: #FFFFFF !important;">
+          Start Managing Your Money Today
+        </h2>
+        <p class="mx-auto mb-4" style="max-width: 620px; font-size: 1.15rem; color: #FFFFFF !important;">
+          Take control of your personal budget with real-time analytics, instant logging, and complete privacy. Free forever.
+        </p>
+        <a href="register.html" class="btn btn-mint btn-lg px-5 py-3 shadow">
+          <i class="bi bi-person-plus-fill me-1"></i> Create Free Account
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section class="py-5" id="contact" style="background: rgba(13, 23, 51, 0.3); border-top: 1px solid rgba(255, 255, 255, 0.05);">
+    <div class="container py-4">
+      <div class="text-center mb-5">
+        <span class="badge px-3 py-2 rounded-pill small fw-bold text-uppercase" style="background: rgba(0, 245, 160, 0.1); color: #FFFFFF !important; border: 1px solid rgba(0, 245, 160, 0.25);">
+          Get in Touch
+        </span>
+        <h2 class="fw-bold mt-3 mb-2" style="color: #FFFFFF !important;">Have Questions or Feedback?</h2>
+        <p class="mx-auto" style="max-width: 540px; color: #FFFFFF !important;">
+          Reach out to our support team or send us a message anytime.
+        </p>
+      </div>
+
+      <div class="row g-4 justify-content-center">
+        <div class="col-lg-4 col-md-6">
+          <div class="p-4 rounded-4 text-center h-100" style="background: #0d1733; border: 1px solid rgba(255, 255, 255, 0.07);">
+            <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px; background: rgba(0, 245, 160, 0.12); color: #00f5a0;">
+              <i class="bi bi-envelope fs-4"></i>
+            </div>
+            <h5 class="fw-bold mb-1" style="color: #FFFFFF !important;">Email Support</h5>
+            <p class="small mb-2" style="color: #FFFFFF !important;">Write to us for any inquiries or bug reports.</p>
+            <a href="mailto:support@expensetrack.app" class="fw-semibold text-decoration-none" style="color: #FFFFFF !important;">support@expensetrack.app</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6">
+          <div class="p-4 rounded-4 text-center h-100" style="background: #0d1733; border: 1px solid rgba(255, 255, 255, 0.07);">
+            <div class="rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 56px; height: 56px; background: rgba(0, 245, 160, 0.12); color: #00f5a0;">
+              <i class="bi bi-chat-dots fs-4"></i>
+            </div>
+            <h5 class="fw-bold mb-1" style="color: #FFFFFF !important;">Quick Contact Form</h5>
+            <p class="small mb-2" style="color: #FFFFFF !important;">Send us a direct message from the browser.</p>
+            <button class="btn btn-sm btn-navy-outline mt-1" data-bs-toggle="modal" data-bs-target="#contactModal" style="color: #FFFFFF !important;">
+              Open Message Form
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Footer -->
+  <footer class="footer-dark" style="color: #FFFFFF !important;">
+    <div class="container">
+      <div class="row g-4 mb-4">
+        <div class="col-lg-5 col-md-6">
+          <a class="landing-brand mb-3 d-inline-flex" href="#home" style="color: #FFFFFF !important;">
+            <div class="landing-brand-icon" style="width: 32px; height: 32px; font-size: 1rem;">
+              <i class="bi bi-wallet2"></i>
+            </div>
+            <span style="color: #FFFFFF !important;">ExpenseTrack</span>
+          </a>
+          <p class="small mb-3" style="max-width: 360px; color: #FFFFFF !important;">
+            A modern, responsive financial SaaS platform helping users track daily expenditures, optimize savings, and make data-driven personal financial decisions.
+          </p>
+          <div class="d-flex gap-2" style="color: #FFFFFF !important;">
+            <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="X (Twitter)"><i class="bi bi-twitter-x"></i></a>
+            <a href="https://github.com/hibanahh786-byte" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="GitHub - hibanahh786-byte"><i class="bi bi-github"></i></a>
+            <a href="https://www.linkedin.com/in/hibana-h-h" target="_blank" rel="noopener noreferrer" class="footer-social-btn" title="LinkedIn - hibana-h-h"><i class="bi bi-linkedin"></i></a>
+          </div>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="fw-bold mb-3" style="color: #FFFFFF !important;">Navigation</h6>
+          <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a href="#home" class="footer-link" style="color: #FFFFFF !important;">Home</a></li>
+            <li><a href="#about" class="footer-link" style="color: #FFFFFF !important;">About</a></li>
+            <li><a href="#features" class="footer-link" style="color: #FFFFFF !important;">Features</a></li>
+            <li><a href="#how-it-works" class="footer-link" style="color: #FFFFFF !important;">How It Works</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-2 col-md-6 col-6">
+          <h6 class="fw-bold mb-3" style="color: #FFFFFF !important;">Access</h6>
+          <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a href="login.html" class="footer-link" style="color: #FFFFFF !important;">Login</a></li>
+            <li><a href="register.html" class="footer-link" style="color: #FFFFFF !important;">Get Started</a></li>
+            <li><a href="#preview" class="footer-link" style="color: #FFFFFF !important;">Dashboard Preview</a></li>
+            <li><a href="#contact" class="footer-link" style="color: #FFFFFF !important;">Contact</a></li>
+          </ul>
+        </div>
+
+        <div class="col-lg-3 col-md-6">
+          <h6 class="fw-bold mb-3" style="color: #FFFFFF !important;">Legal & Security</h6>
+          <ul class="list-unstyled mb-0 d-flex flex-column gap-2">
+            <li><a href="#" class="footer-link" data-bs-toggle="modal" data-bs-target="#privacyModal" style="color: #FFFFFF !important;">Privacy Policy</a></li>
+            <li><a href="#" class="footer-link" data-bs-toggle="modal" data-bs-target="#privacyModal" style="color: #FFFFFF !important;">Terms of Service</a></li>
+            <li><a href="#contact" class="footer-link" style="color: #FFFFFF !important;">Support & Help</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="d-flex flex-wrap justify-content-between align-items-center pt-3 border-top" style="border-color: rgba(255, 255, 255, 0.08) !important;">
+        <p class="mb-0 small" style="color: #FFFFFF !important;">
+          &copy; 2026 ExpenseTrack. All rights reserved.
+        </p>
+        <p class="mb-0 small" style="color: #FFFFFF !important;">
+          Crafted with dark navy blue & mint green aesthetic.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Contact Form Modal -->
+  <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content border-0 text-white rounded-4" style="background: #0d1733; border: 1px solid rgba(0, 245, 160, 0.3) !important;">
+        <div class="modal-header border-bottom" style="border-color: rgba(255, 255, 255, 0.08) !important;">
+          <h5 class="modal-title fw-bold" id="contactModalLabel" style="color: #FFFFFF !important;">
+            <i class="bi bi-chat-text-fill me-2" style="color: #00f5a0;"></i>Send a Message
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <form id="landingContactForm">
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="contactName" class="form-label small fw-semibold" style="color: #FFFFFF !important;">Your Name</label>
+              <input type="text" class="form-control text-white border-0" id="contactName" placeholder="Enter your name" style="background: rgba(255, 255, 255, 0.05); color: #FFFFFF !important;" required>
+            </div>
+            <div class="mb-3">
+              <label for="contactEmail" class="form-label small fw-semibold" style="color: #FFFFFF !important;">Email Address</label>
+              <input type="email" class="form-control text-white border-0" id="contactEmail" placeholder="name@example.com" style="background: rgba(255, 255, 255, 0.05); color: #FFFFFF !important;" required>
+            </div>
+            <div class="mb-3">
+              <label for="contactMessage" class="form-label small fw-semibold" style="color: #FFFFFF !important;">Message</label>
+              <textarea class="form-control text-white border-0" id="contactMessage" rows="3" placeholder="How can we help?" style="background: rgba(255, 255, 255, 0.05); color: #FFFFFF !important;" required></textarea>
+            </div>
+          </div>
+          <div class="modal-footer border-top" style="border-color: rgba(255, 255, 255, 0.08) !important;">
+            <button type="button" class="btn btn-navy-outline btn-sm" data-bs-dismiss="modal" style="color: #FFFFFF !important;">Close</button>
+            <button type="submit" class="btn btn-mint btn-sm px-4">Send Message</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Privacy Policy Modal -->
+  <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="privacyModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+      <div class="modal-content border-0 text-white rounded-4" style="background: #0d1733; border: 1px solid rgba(0, 245, 160, 0.3) !important;">
+        <div class="modal-header border-bottom" style="border-color: rgba(255, 255, 255, 0.08) !important;">
+          <h5 class="modal-title fw-bold" id="privacyModalLabel" style="color: #FFFFFF !important;">
+            <i class="bi bi-shield-check me-2" style="color: #00f5a0;"></i>Privacy Policy & Data Security
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body leading-relaxed" style="font-size: 0.95rem; color: #FFFFFF !important;">
+          <h6 class="fw-bold mb-2" style="color: #FFFFFF !important;">1. Your Privacy is Absolute</h6>
+          <p class="mb-3" style="color: #FFFFFF !important;">At ExpenseTrack, we believe that your personal financial details belong solely to you. All user accounts are isolated at the database layer. No third-party data broker has access to your logged expenses.</p>
+
+          <h6 class="fw-bold mb-2" style="color: #FFFFFF !important;">2. Secure Password Encryption</h6>
+          <p class="mb-3" style="color: #FFFFFF !important;">Your password is encrypted using the industry-standard bcrypt hashing algorithm with 10 salt rounds before being stored. Even database administrators cannot view your raw password.</p>
+
+          <h6 class="fw-bold mb-2" style="color: #FFFFFF !important;">3. Stateless JWT Authentication</h6>
+          <p class="mb-3" style="color: #FFFFFF !important;">We utilize cryptographically signed JSON Web Tokens (JWT) stored securely within your browser's localStorage. Tokens expire automatically and ensure zero session interception.</p>
+
+          <h6 class="fw-bold mb-2" style="color: #FFFFFF !important;">4. Public Landing Page Policy</h6>
+          <p class="mb-0" style="color: #FFFFFF !important;">This public landing page displays only synthetic sample preview data. Actual private financial records are accessible only after successful user authentication.</p>
+        </div>
+        <div class="modal-footer border-top" style="border-color: rgba(255, 255, 255, 0.08) !important;">
+          <button type="button" class="btn btn-mint btn-sm px-4" data-bs-dismiss="modal">Understood</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="js/api.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Check if user is logged in already and adjust top navbar CTA
+      const token = getToken();
+      if (token) {
+        const navContainer = document.getElementById('navAuthButtons');
+        if (navContainer) {
+          navContainer.innerHTML = `
+            <a href="dashboard.html" class="btn btn-mint">
+              <i class="bi bi-speedometer2 me-1"></i> Go to Dashboard
+            </a>
+          `;
+        }
+      }
+
+      // Render Sample Dashboard Preview Charts
+      renderPreviewCharts();
+
+      // Contact form submit feedback
+      const contactForm = document.getElementById('landingContactForm');
+      if (contactForm) {
+        contactForm.addEventListener('submit', (e) => {
+          e.preventDefault();
+          const modalEl = document.getElementById('contactModal');
+          const modal = bootstrap.Modal.getInstance(modalEl);
+          if (modal) modal.hide();
+          showToast('Thank you! Your message has been sent successfully.', 'success');
+          contactForm.reset();
+        });
+      }
+    });
+
+    // Render Preview Chart.js instances with dark navy & mint green styling
+    function renderPreviewCharts() {
+      // 1. Monthly Trend Bar Chart
+      const monthlyCtx = document.getElementById('previewMonthlyChart');
+      if (monthlyCtx) {
+        new Chart(monthlyCtx, {
+          type: 'bar',
+          data: {
+            labels: ['May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+            datasets: [{
+              label: 'Sample Monthly Spending',
+              data: [14200, 18900, 16400, 22100, 19500, 20036],
+              backgroundColor: 'rgba(0, 245, 160, 0.75)',
+              hoverBackgroundColor: '#00f5a0',
+              borderRadius: 6,
+              barPercentage: 0.55
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            scales: {
+              y: {
+                beginAtZero: true,
+                grid: { color: 'rgba(255, 255, 255, 0.06)' },
+                ticks: {
+                  color: '#FFFFFF',
+                  font: { family: "'Inter', sans-serif", size: 11 },
+                  callback: (val) => '₹ ' + (val / 1000) + 'k'
+                }
+              },
+              x: {
+                grid: { display: false },
+                ticks: { color: '#FFFFFF', font: { family: "'Inter', sans-serif", size: 11 } }
+              }
+            },
+            plugins: {
+              legend: { display: false },
+              tooltip: {
+                callbacks: {
+                  label: (ctx) => ' Sample Spend: ₹ ' + ctx.parsed.y.toLocaleString()
+                }
+              }
+            }
+          }
+        });
+      }
+
+      // 2. Category Doughnut Chart
+      const categoryCtx = document.getElementById('previewCategoryChart');
+      if (categoryCtx) {
+        new Chart(categoryCtx, {
+          type: 'doughnut',
+          data: {
+            labels: ['Food', 'Travel', 'Shopping', 'Bills', 'Health', 'Entertainment'],
+            datasets: [{
+              data: [8400, 5600, 13400, 6800, 4200, 4384],
+              backgroundColor: [
+                '#00f5a0', // Mint Green
+                '#38bdf8', // Sky Blue
+                '#c084fc', // Purple
+                '#f59e0b', // Amber
+                '#ef4444', // Red
+                '#06b6d4'  // Cyan
+              ],
+              borderWidth: 2,
+              borderColor: '#0d1733'
+            }]
+          },
+          options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+              legend: {
+                position: 'bottom',
+                labels: {
+                  boxWidth: 10,
+                  padding: 10,
+                  color: '#FFFFFF',
+                  font: { family: "'Inter', sans-serif", size: 11 }
+                }
+              },
+              tooltip: {
+                callbacks: {
+                  label: (ctx) => ' ' + ctx.label + ': ₹ ' + ctx.parsed.toLocaleString()
+                }
+              }
+            },
+            cutout: '68%'
+          }
+        });
+      }
+    }
+  </script>
+</body>
+</html>

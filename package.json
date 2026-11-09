@@ -1,0 +1,33 @@
+{
+  "name": "expense-tracker-website",
+  "version": "1.0.0",
+  "description": "Full-Stack Responsive Expense Tracker Website for MCA Academic Project",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js",
+    "seed": "node backend/utils/seedData.js"
+  },
+  "keywords": [
+    "expense-tracker",
+    "nodejs",
+    "express",
+    "mongodb",
+    "mongoose",
+    "jwt",
+    "bootstrap5",
+    "chartjs",
+    "mca-project"
+  ],
+  "author": "Full-Stack Web Developer",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.5.1",
+    "morgan": "^1.10.0"
+  }
+}

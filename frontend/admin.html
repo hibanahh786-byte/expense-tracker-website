@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Operations Center - ExpenseTrack</title>
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <!-- Google Fonts Inter -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Custom Stylesheet -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <div class="dashboard-wrapper">
+    <!-- Sidebar Navigation -->
+    <aside class="sidebar" id="sidebar">
+      <a href="index.html" class="sidebar-brand text-decoration-none">
+        <i class="bi bi-shield-lock-fill" style="color: #00f5a0;"></i>
+        <span>ExpenseTrack</span>
+        <span class="badge ms-auto" style="background: rgba(0, 245, 160, 0.15); color: #00f5a0; border: 1px solid rgba(0, 245, 160, 0.3); font-size: 0.65rem; letter-spacing: 0.05em;">ADMIN</span>
+      </a>
+
+      <div class="px-3 py-2 mb-2">
+        <div class="p-2 rounded-3 text-center" style="background: rgba(0, 245, 160, 0.06); border: 1px solid rgba(0, 245, 160, 0.2);">
+          <small class="fw-semibold text-uppercase" style="letter-spacing: 0.08em; font-size: 0.7rem; color: #00f5a0 !important;">Master Control Hub</small>
+        </div>
+      </div>
+
+      <ul class="sidebar-menu">
+        <li class="sidebar-menu-item">
+          <a href="#" class="sidebar-link active admin-sidebar-nav" data-target-tab="tabOverview">
+            <i class="bi bi-speedometer2"></i>
+            <span>Executive Overview</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item">
+          <a href="#" class="sidebar-link admin-sidebar-nav" data-target-tab="tabUsers">
+            <i class="bi bi-people-fill"></i>
+            <span>User Management</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item">
+          <a href="#" class="sidebar-link admin-sidebar-nav" data-target-tab="tabAudit">
+            <i class="bi bi-receipt-cutoff"></i>
+            <span>Global Expense Audit</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item">
+          <a href="#" class="sidebar-link admin-sidebar-nav" data-target-tab="tabSystem">
+            <i class="bi bi-cpu-fill"></i>
+            <span>System & Diagnostics</span>
+          </a>
+        </li>
+        <li class="sidebar-menu-item mt-3 pt-3 border-top" style="border-color: rgba(255, 255, 255, 0.08) !important;">
+          <a href="dashboard.html" class="sidebar-link">
+            <i class="bi bi-box-arrow-up-right"></i>
+            <span>Switch to User View</span>
+          </a>
+        </li>
+      </ul>
+
+      <div class="sidebar-footer">
+        <div class="user-badge">
+          <div class="user-avatar dynamic-user-avatar" style="background: #00f5a0; color: #070d1e; font-weight: 800;">A</div>
+          <div class="user-details">
+            <div class="user-name dynamic-user-name">System Administrator</div>
+            <div class="user-email dynamic-user-email">admin@expensetrack.app</div>
+          </div>
+        </div>
+        <a href="#" class="text-secondary hover-white ms-2 btn-logout" title="Sign Out">
+          <i class="bi bi-box-arrow-right fs-5"></i>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="main-content">
+      <!-- Top Navigation Header -->
+      <header class="top-header">
+        <div class="d-flex align-items-center gap-3">
+          <button class="btn btn-outline-custom d-lg-none py-1 px-2" id="sidebarToggle" aria-label="Toggle Sidebar">
+            <i class="bi bi-list fs-5"></i>
+          </button>
+          <div>
+            <div class="d-flex align-items-center gap-2">
+              <h5 class="mb-0 fw-bold">Admin Operations Center</h5>
+              <span class="badge" style="background: rgba(0, 245, 160, 0.15); color: #00f5a0; border: 1px solid rgba(0, 245, 160, 0.35);">Privileged Role</span>
+            </div>
+            <small>Multi-module platform administration, RBAC control, and system oversight</small>
+          </div>
+        </div>
+
+        <div class="d-flex align-items-center gap-2">
+          <button class="btn btn-sm btn-navy-outline d-none d-md-inline-flex align-items-center gap-1" id="btnExportBackupTop">
+            <i class="bi bi-download" style="color: #00f5a0;"></i>
+            <span>Export DB Backup</span>
+          </button>
+          <span class="badge px-3 py-2 d-none d-lg-inline-flex align-items-center gap-2" style="background: rgba(0, 245, 160, 0.12); border: 1px solid rgba(0, 245, 160, 0.3);">
+            <span class="pulse-dot-mint"></span>
+            <span class="fw-semibold">All Services Live</span>
+          </span>
+          <a href="dashboard.html" class="btn btn-sm btn-mint">
+            <i class="bi bi-person-circle me-1"></i> User View
+          </a>
+        </div>
+      </header>
+
+      <!-- Page Body -->
+      <div class="page-body">
+
+        <!-- Navigation Tabs Bar -->
+        <div class="admin-nav-tabs">
+          <button class="admin-tab-btn active" data-tab="tabOverview">
+            <i class="bi bi-speedometer2"></i> Executive Overview
+          </button>
+          <button class="admin-tab-btn" data-tab="tabUsers">
+            <i class="bi bi-people-fill"></i> User Management & RBAC
+            <span class="badge ms-1 rounded-pill" id="badgeTabUsersCount" style="background: rgba(255, 255, 255, 0.1);">0</span>
+          </button>
+          <button class="admin-tab-btn" data-tab="tabAudit">
+            <i class="bi bi-receipt-cutoff"></i> Global Expense Audit
+            <span class="badge ms-1 rounded-pill" id="badgeTabExpensesCount" style="background: rgba(255, 255, 255, 0.1);">0</span>
+          </button>
+          <button class="admin-tab-btn" data-tab="tabSystem">
+            <i class="bi bi-cpu-fill"></i> System Diagnostics & Backups
+          </button>
+        </div>
+
+        <!-- ============================================================= -->
+        <!-- TAB 1: EXECUTIVE OVERVIEW -->
+        <!-- ============================================================= -->
+        <section id="tabOverview" class="admin-tab-pane active">
+          <!-- 4 Executive KPI Cards -->
+          <div class="row g-3 mb-4">
+            <div class="col-xl-3 col-md-6">
+              <div class="stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="stat-label">Registered Accounts</span>
+                  <div class="stat-icon">
+                    <i class="bi bi-people"></i>
+                  </div>
+                </div>
+                <div class="stat-value" id="adminTotalUsers">0</div>
+                <div class="mt-2 small">
+                  <i class="bi bi-check2-circle me-1" style="color: #00f5a0;"></i>Active platform members
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+              <div class="stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="stat-label">Platform Gross Volume</span>
+                  <div class="stat-icon">
+                    <i class="bi bi-wallet2"></i>
+                  </div>
+                </div>
+                <div class="stat-value" id="adminTotalAmount">₹ 0.00</div>
+                <div class="mt-2 small">
+                  <i class="bi bi-arrow-up-right me-1" style="color: #00f5a0;"></i>Cumulative logged transactions
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+              <div class="stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="stat-label">Total Transactions</span>
+                  <div class="stat-icon">
+                    <i class="bi bi-receipt"></i>
+                  </div>
+                </div>
+                <div class="stat-value" id="adminTotalTransactions">0</div>
+                <div class="mt-2 small">
+                  <i class="bi bi-database-check me-1" style="color: #00f5a0;"></i>Audited expense records
+                </div>
+              </div>
+            </div>
+
+            <div class="col-xl-3 col-md-6">
+              <div class="stat-card">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                  <span class="stat-label">Host Infrastructure</span>
+                  <div class="stat-icon">
+                    <i class="bi bi-shield-check"></i>
+                  </div>
+                </div>
+                <div class="stat-value" style="font-size: 1.25rem;" id="adminHealthLabel">100% HEALTHY</div>
+                <div class="mt-2 small">
+                  <i class="bi bi-hdd-network me-1" style="color: #00f5a0;"></i><span id="adminUptimeBadge">Uptime: 0m</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Overview Grid: Distribution Chart & Quick Moderation Highlights -->
+          <div class="row g-4 mb-4">
+            <div class="col-lg-7">
+              <div class="dashboard-card h-100">
+                <div class="card-header">
+                  <h6 class="card-title-custom">
+                    <i class="bi bi-pie-chart-fill"></i>
+                    <span>Platform Category Distribution</span>
+                  </h6>
+                  <span class="badge" style="background: rgba(0, 245, 160, 0.15); color: #00f5a0;">All Users Aggregated</span>
+                </div>
+                <div class="card-body p-4">
+                  <div style="position: relative; height: 280px; width: 100%;">
+                    <canvas id="adminCategoryChart"></canvas>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-5">
+              <div class="dashboard-card h-100">
+                <div class="card-header">
+                  <h6 class="card-title-custom">
+                    <i class="bi bi-sliders"></i>
+                    <span>Quick Administration Actions</span>
+                  </h6>
+                  <span class="badge" style="background: rgba(255, 255, 255, 0.08);">Shortcuts</span>
+                </div>
+                <div class="card-body p-4 d-flex flex-column gap-3 justify-content-center">
+                  <button class="btn btn-navy-outline text-start d-flex align-items-center justify-content-between p-3" id="btnQuickGoUsers">
+                    <div>
+                      <div class="fw-bold"><i class="bi bi-person-gear me-2" style="color: #00f5a0;"></i>Manage Platform Users</div>
+                      <small class="opacity-75">Assign Admin privileges or manage accounts</small>
+                    </div>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+
+                  <button class="btn btn-navy-outline text-start d-flex align-items-center justify-content-between p-3" id="btnQuickGoAudit">
+                    <div>
+                      <div class="fw-bold"><i class="bi bi-journal-text me-2" style="color: #00f5a0;"></i>Audit All Global Expenses</div>
+                      <small class="opacity-75">Review, filter, and moderate expenditures</small>
+                    </div>
+                    <i class="bi bi-chevron-right"></i>
+                  </button>
+
+                  <button class="btn btn-mint text-start d-flex align-items-center justify-content-between p-3" id="btnQuickDownloadBackup">
+                    <div>
+                      <div class="fw-bold"><i class="bi bi-cloud-arrow-down-fill me-2"></i>Export Full Database Backup</div>
+                      <small>Instant JSON download with complete snapshot</small>
+                    </div>
+                    <i class="bi bi-download"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- TAB 2: USER MANAGEMENT & RBAC -->
+        <!-- ============================================================= -->
+        <section id="tabUsers" class="admin-tab-pane">
+          <div class="dashboard-card mb-4">
+            <div class="card-header flex-wrap gap-2">
+              <div>
+                <h6 class="card-title-custom mb-0">
+                  <i class="bi bi-people-fill"></i>
+                  <span>Platform User Ledger & RBAC</span>
+                </h6>
+                <small class="opacity-75">Manage user roles, inspect member activity, and administer platform access</small>
+              </div>
+
+              <div class="d-flex align-items-center gap-2">
+                <div class="input-group input-group-sm" style="max-width: 240px;">
+                  <span class="input-group-text"><i class="bi bi-search"></i></span>
+                  <input type="text" id="userSearchInput" class="form-control" placeholder="Search by name or email...">
+                </div>
+                <select id="userRoleFilter" class="form-select form-select-sm" style="width: 130px;">
+                  <option value="">All Roles</option>
+                  <option value="admin">Admins Only</option>
+                  <option value="user">Standard Users</option>
+                </select>
+                <button class="btn btn-sm btn-navy-outline" id="btnRefreshUsers">
+                  <i class="bi bi-arrow-clockwise me-1"></i> Refresh
+                </button>
+              </div>
+            </div>
+
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-custom mb-0">
+                  <thead>
+                    <tr>
+                      <th>User Account</th>
+                      <th>Email Address</th>
+                      <th>Currency</th>
+                      <th>Role</th>
+                      <th>Activity Ledger</th>
+                      <th>Joined Date</th>
+                      <th class="text-end">Administrative Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminUsersTableBody">
+                    <tr>
+                      <td colspan="7" class="text-center py-4">
+                        <div class="spinner-border spinner-border-sm me-2" style="color: #00f5a0;"></div> Loading user ledger...
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- TAB 3: GLOBAL EXPENSE AUDIT -->
+        <!-- ============================================================= -->
+        <section id="tabAudit" class="admin-tab-pane">
+          <div class="dashboard-card mb-4">
+            <div class="card-header flex-wrap gap-2">
+              <div>
+                <h6 class="card-title-custom mb-0">
+                  <i class="bi bi-shield-check"></i>
+                  <span>Global Platform Expense Audit & Moderation</span>
+                </h6>
+                <small class="opacity-75">Cross-user platform financial transactions audit ledger</small>
+              </div>
+
+              <div class="d-flex align-items-center gap-2 flex-wrap">
+                <div class="input-group input-group-sm" style="max-width: 220px;">
+                  <span class="input-group-text"><i class="bi bi-search"></i></span>
+                  <input type="text" id="auditSearchInput" class="form-control" placeholder="Search title/desc...">
+                </div>
+                <select id="auditCategoryFilter" class="form-select form-select-sm" style="width: 140px;">
+                  <option value="">All Categories</option>
+                  <option value="Food">Food</option>
+                  <option value="Travel">Travel</option>
+                  <option value="Shopping">Shopping</option>
+                  <option value="Education">Education</option>
+                  <option value="Health">Health</option>
+                  <option value="Entertainment">Entertainment</option>
+                  <option value="Bills">Bills</option>
+                  <option value="Others">Others</option>
+                </select>
+                <select id="auditPaymentFilter" class="form-select form-select-sm" style="width: 140px;">
+                  <option value="">All Payments</option>
+                  <option value="UPI">UPI</option>
+                  <option value="Cash">Cash</option>
+                  <option value="Credit Card">Credit Card</option>
+                  <option value="Debit Card">Debit Card</option>
+                  <option value="Net Banking">Net Banking</option>
+                </select>
+                <button class="btn btn-sm btn-navy-outline" id="btnRefreshAudit">
+                  <i class="bi bi-arrow-clockwise me-1"></i> Refresh
+                </button>
+              </div>
+            </div>
+
+            <div class="card-body p-0">
+              <div class="table-responsive">
+                <table class="table table-custom mb-0">
+                  <thead>
+                    <tr>
+                      <th>Account Owner</th>
+                      <th>Expense Title</th>
+                      <th>Category</th>
+                      <th>Payment Method</th>
+                      <th>Date</th>
+                      <th>Amount</th>
+                      <th class="text-end">Moderation</th>
+                    </tr>
+                  </thead>
+                  <tbody id="adminAuditTableBody">
+                    <tr>
+                      <td colspan="7" class="text-center py-4">
+                        <div class="spinner-border spinner-border-sm me-2" style="color: #00f5a0;"></div> Auditing platform records...
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================================= -->
+        <!-- TAB 4: SYSTEM & DIAGNOSTICS -->
+        <!-- ============================================================= -->
+        <section id="tabSystem" class="admin-tab-pane">
+          <div class="dashboard-card mb-4">
+            <div class="card-header">
+              <h6 class="card-title-custom">
+                <i class="bi bi-cpu-fill"></i>
+                <span>Platform Infrastructure & Live Diagnostics</span>
+              </h6>
+              <span class="badge px-3 py-2" style="background: rgba(0, 245, 160, 0.15); border: 1px solid rgba(0, 245, 160, 0.35);">
+                Host Operational
+              </span>
+            </div>
+            <div class="card-body p-4">
+              <div class="row g-4 mb-4">
+                <div class="col-md-3 col-6">
+                  <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <small class="d-block mb-1 opacity-75">Server Engine</small>
+                    <h6 class="fw-bold mb-0">Node.js Express REST</h6>
+                    <small class="text-success mt-1 d-block" id="diagNodeVersion">v18+</small>
+                  </div>
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <small class="d-block mb-1 opacity-75">Active Database Mode</small>
+                    <h6 class="fw-bold mb-0" id="adminStorageMode">Engine Initializing...</h6>
+                    <small class="text-success mt-1 d-block">Persistent Dual Engine</small>
+                  </div>
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <small class="d-block mb-1 opacity-75">Process Memory (RSS)</small>
+                    <h6 class="fw-bold mb-0" id="diagMemory">-- MB</h6>
+                    <small class="text-success mt-1 d-block">Optimal allocation</small>
+                  </div>
+                </div>
+                <div class="col-md-3 col-6">
+                  <div class="p-3 rounded-3" style="background: rgba(255, 255, 255, 0.03); border: 1px solid rgba(255, 255, 255, 0.08);">
+                    <small class="d-block mb-1 opacity-75">Server Process Uptime</small>
+                    <h6 class="fw-bold mb-0" id="diagUptime">-- seconds</h6>
+                    <small class="text-success mt-1 d-block">Continuous Service</small>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Database Backup Card inside Diagnostics -->
+              <div class="p-4 rounded-3" style="background: rgba(0, 245, 160, 0.04); border: 1px solid rgba(0, 245, 160, 0.25);">
+                <div class="d-flex flex-wrap align-items-center justify-content-between gap-3">
+                  <div>
+                    <h5 class="fw-bold mb-1">
+                      <i class="bi bi-database-down me-2" style="color: #00f5a0;"></i>
+                      Full Platform Database Backup (.JSON)
+                    </h5>
+                    <p class="mb-0 small opacity-75" style="max-width: 600px;">
+                      Export a complete, encrypted-ready JSON snapshot of all registered users, system categories, and platform expense audit ledgers. Ideal for academic backups and disaster recovery.
+                    </p>
+                  </div>
+                  <button type="button" class="btn btn-mint px-4 py-2 fw-semibold" id="btnDownloadBackup">
+                    <i class="bi bi-download me-2"></i> Download Backup File
+                  </button>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </main>
+  </div>
+
+  <div id="toastContainer"></div>
+
+  <!-- Scripts -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script src="js/api.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/admin.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      initAdminPage();
+    });
+  </script>
+</body>
+</html>
