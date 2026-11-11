@@ -89,6 +89,8 @@ app.get('/expenses.html', sendHtml('expenses.html'));
 app.get('/edit-expense.html', sendHtml('edit-expense.html'));
 app.get('/reports.html', sendHtml('reports.html'));
 app.get('/profile.html', sendHtml('profile.html'));
+app.get('/admin', sendHtml('admin.html'));
+app.get('/admin.html', sendHtml('admin.html'));
 
 // Global Error Handler
 app.use(errorHandler);
@@ -104,7 +106,22 @@ const server = app.listen(PORT, () => {
   console.log(`====================================================`);
 });
 
-// Handle unhandled promise rejections
+server.on('error', (err) => {
+  if (err.code === 'EADDRINUSE') {
+    console.error(`Port ${PORT} in use, retrying in 2 seconds...`);
+    setTimeout(() => {
+      server.close();
+      server.listen(PORT);
+    }, 2000);
+  } else {
+    console.error('Server error:', err);
+  }
+});
+
+// Handle unhandled exceptions & promise rejections
+process.on('uncaughtException', (err) => {
+  console.error(`Uncaught Exception: ${err.message}`, err.stack);
+});
 process.on('unhandledRejection', (err) => {
   console.error(`Unhandled Rejection: ${err.message}`);
 });
